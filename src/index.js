@@ -1,1 +1,1 @@
-alert('Hello Udemy')
+alert('Hello Udemy');
