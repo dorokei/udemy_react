@@ -7,16 +7,22 @@ const InnerMap = withGoogleMap(props => (
     defaultZoom={12}
     defaultCenter={props.position}
     center={props.position}
-  />
+  >
+    <Marker {...props.marker} />
+  </GoogleMap>
 ));
 
-const Map = ({ lat, lng }) => (
-  <InnerMap
-    containerElement={<div />}
-    mapElement={<div className="map" />}
-    position={{ lat, lng }}
-  />
-);
+const Map = ({ lat, lng }) => {
+  const position = { lat, lng };
+  return (
+    <InnerMap
+      containerElement={<div />}
+      mapElement={<div className="map" />}
+      position={position}
+      marker={{ position }}
+    />
+  );
+};
 
 Map.propTypes = {
   lat: PropTypes.number,
