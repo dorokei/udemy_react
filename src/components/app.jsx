@@ -3,8 +3,10 @@ import axios from 'axios';
 
 import SearchForm from './SearchForm';
 import GeocodeResult from './GeocodeResult';
+import Map from './Map';
 
-const GEOCODE_ENDPOINT = 'https://maps.googleapis.com/maps/api/geocode/json';
+const GEOCODE_ENDPOINT =
+  'https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyBgi7MzVT0PzMfOI9OxZ7qmxy_Dd-TnLZQ';
 
 class App extends Component {
   constructor(props) {
@@ -59,6 +61,7 @@ class App extends Component {
           lat={this.state.lat}
           lng={this.state.lng}
         />
+        <Map lat={this.state.lat} lng={this.state.lng} />
       </div>
     );
   }
