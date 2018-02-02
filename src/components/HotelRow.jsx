@@ -14,6 +14,7 @@ const HotelRow = ({ hotel }) => (
     <td>{hotel.price}</td>
     <td>{hotel.reviewAverage}</td>
     <td>{hotel.reviewCount}</td>
+    <td>{hotel.distance}</td>
   </tr>
 );
 
@@ -24,7 +25,8 @@ HotelRow.propTypes = {
     thumbUrl: PropTypes.string,
     price: PropTypes.string,
     reviewCount: PropTypes.number,
-    reviewAverage: PropTypes.number
+    reviewAverage: PropTypes.number,
+    distance: PropTypes.number
   }).isRequired
 };
 
