@@ -12,10 +12,16 @@ export const searchHotelByLocation = location => {
   return Rakuten.Travel.SimpleHotelSearch(params).then(result => {
     return result.data.hotels.map(hotel => {
       const basicInfo = hotel.hotel[0].hotelBasicInfo;
+      console.log(basicInfo);
+      const price = basicInfo.hotelMinCharge;
       return {
         id: basicInfo.hotelNo,
         name: basicInfo.hotelName,
-        url: basicInfo.hotelInformationUrl
+        url: basicInfo.hotelInformationUrl,
+        thumbUrl: basicInfo.hotelThumbnailUrl,
+        price: price ? `${price}円` : '空室なし',
+        reviewAverage: basicInfo.reviewAverage,
+        reviewCount: basicInfo.reviewCount
       };
     });
   });
