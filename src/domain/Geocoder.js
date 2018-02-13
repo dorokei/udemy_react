@@ -24,4 +24,3 @@ export const geocode = place =>
     });
 
 export default geocode;
-
