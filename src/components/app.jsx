@@ -80,6 +80,7 @@ class App extends Component {
             <h2>ホテル検索結果</h2>
             <HotelsTable
               hotels={this.state.hotels}
+              sortKey={this.state.sortKey}
               onSort={sortKey => this.handleSortedKeyChange(sortKey)}
             />
           </div>
